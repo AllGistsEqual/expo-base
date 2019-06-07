@@ -1,9 +1,7 @@
 import React from 'react'
 import { StyleSheet, Text, View} from "react-native"
 
-const SceneStart = (props) => {
-    const { navigation } = props
-
+const SceneStart = () => {
     return (
         <View style={styles.container}>
             <Text>SceneStart</Text>
