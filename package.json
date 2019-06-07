@@ -9,6 +9,15 @@
     "fix": "eslint --fix src/ --ext .js,.jsx || true",
     "eject": "expo eject"
   },
+  "metro": {
+    "resolver": {
+      "sourceExts": [
+        "js",
+        "jsx",
+        "json"
+      ]
+    }
+  },
   "dependencies": {
     "expo": "^33.0.0",
     "react": "16.8.3",
