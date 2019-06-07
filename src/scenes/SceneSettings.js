@@ -1,13 +1,11 @@
 import React from 'react'
-import { StyleSheet, Text, View} from "react-native"
+import { StyleSheet, Text, View } from 'react-native'
 
-const SceneSettings = () => {
-    return (
-        <View style={styles.container}>
-            <Text>Scene Settings</Text>
-        </View>
-    )
-}
+const SceneSettings = () => (
+    <View style={styles.container}>
+        <Text>Scene Settings</Text>
+    </View>
+)
 
 const styles = StyleSheet.create({
     container: {

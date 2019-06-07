@@ -1,14 +1,12 @@
 import React from 'react'
-import { StyleSheet, Text, View} from "react-native"
+import { StyleSheet, Text, View } from 'react-native'
 
-const SceneHome = () => {
-    return (
-        <View style={styles.container}>
-            <Text>Hello World!</Text>
-            <Text>Home Page</Text>
-        </View>
-    )
-}
+const SceneHome = () => (
+    <View style={styles.container}>
+        <Text>Hello World!</Text>
+        <Text>Home Page</Text>
+    </View>
+)
 
 const styles = StyleSheet.create({
     container: {
