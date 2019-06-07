@@ -7,7 +7,7 @@ import SceneHome from "./src/scenes/SceneHome"
 import SceneStart from "./src/scenes/SceneStart"
 import SceneSettings from "./src/scenes/SceneSettings"
 
-let RootStack = createBottomTabNavigator(
+let TabNavigator = createBottomTabNavigator(
   {
       Home: SceneHome,
       Settings: SceneSettings,
@@ -18,7 +18,7 @@ let RootStack = createBottomTabNavigator(
   }
 )
 
-let Navigation = createAppContainer(RootStack)
+let Navigation = createAppContainer(TabNavigator)
 
 export default function App() {
   return (
