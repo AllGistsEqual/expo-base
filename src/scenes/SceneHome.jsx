@@ -1,12 +1,21 @@
 import React from 'react'
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
 import { StyleSheet, Text, View } from 'react-native'
 
-const SceneHome = () => (
-    <View style={styles.container}>
-        <Text>Hello World!</Text>
-        <Text>Home Page</Text>
-    </View>
-)
+const SceneHome = (props) => {
+    const { applicationState: { version } } = props
+
+    return (
+        <View style={styles.container}>
+            <Text>Hello World!</Text>
+            <Text>Home Page</Text>
+            <Text>
+                {`Version: ${version}`}
+            </Text>
+        </View>
+    )
+}
 
 const styles = StyleSheet.create({
     container: {
@@ -17,4 +26,15 @@ const styles = StyleSheet.create({
     },
 })
 
-export default SceneHome
+
+SceneHome.propTypes = {
+    applicationState: PropTypes.object.isRequired,
+}
+
+const mapStateToProps = state => ({
+    applicationState: state.application,
+})
+
+export default connect(
+    mapStateToProps,
+)(SceneHome)

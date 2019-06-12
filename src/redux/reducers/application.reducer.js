@@ -1,5 +1,6 @@
 const initialState = {
     status: false,
+    version: -1,
 }
 
 const applicationReducer = (state = initialState, action) => {
