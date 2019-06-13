@@ -1,7 +1,7 @@
 import React from 'react'
 import {
     createAppContainer,
-    createBottomTabNavigator
+    createBottomTabNavigator,
 } from 'react-navigation'
 import { Provider } from 'react-redux'
 import configureStore from './src/redux/store'
