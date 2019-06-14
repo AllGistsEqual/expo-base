@@ -1,15 +1,25 @@
 import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { StyleSheet, Text, View } from 'react-native'
-import { initialiseApplication } from '../redux/actions/application.actions'
+import {
+    Button, StyleSheet, Text, View,
+} from 'react-native'
+import { generateGameIdea } from '../redux/actions/generator.actions'
 
 const SceneHome = (props) => {
-    const { applicationState: { version, name }, checkInit } = props
+    const {
+        applicationState: { version, name },
+        currentGameIdea,
+        randomiseGameIdea,
+    } = props
 
     useEffect(() => {
-        checkInit()
-    }, [checkInit])
+        randomiseGameIdea()
+    }, [randomiseGameIdea])
+
+    function onPressGenerateGameIdea() {
+        randomiseGameIdea()
+    }
 
     return (
         <View style={styles.container}>
@@ -17,6 +27,14 @@ const SceneHome = (props) => {
                 {`${name} v${version}`}
             </Text>
             <Text>Home Page</Text>
+            <Button
+                onPress={onPressGenerateGameIdea}
+                title="[ Generate Game Idea ]"
+                color="#841584"
+                accessibilityLabel="Press this button to generate a Game Idea"
+            />
+            <Text>{currentGameIdea}</Text>
+
         </View>
     )
 }
@@ -27,20 +45,23 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         alignItems: 'center',
         justifyContent: 'center',
+        margin: 20,
     },
 })
 
 SceneHome.propTypes = {
     applicationState: PropTypes.object.isRequired,
-    checkInit: PropTypes.func.isRequired,
+    currentGameIdea: PropTypes.string.isRequired,
+    randomiseGameIdea: PropTypes.func.isRequired,
 }
 
 const mapStateToProps = state => ({
     applicationState: state.application,
+    currentGameIdea: state.gameIdea,
 })
 
 const mapDispatchToProps = dispatch => ({
-    checkInit: () => dispatch(initialiseApplication()),
+    randomiseGameIdea: () => dispatch(generateGameIdea()),
 })
 
 export default connect(

@@ -1,0 +1,41 @@
+{
+  "genre": [
+    "Platform",
+    "Shooter",
+    "Fighting",
+    "Beat 'em up",
+    "Stealth",
+    "Survival",
+    "Rhythm"
+  ],
+  "objectives": [
+    "move",
+    "remove",
+    "transport",
+    "kill",
+    "protect",
+    "escort",
+    "collect"
+  ],
+  "things": [
+    "bananas",
+    "reptiles",
+    "cars",
+    "balls",
+    "sloths",
+    "dinosaurs",
+    "pirates",
+    "ninjas",
+    "zombies"
+  ],
+  "setting": [
+    "in space",
+    "under the sea",
+    "in a fantasy world",
+    "in a book",
+    "in a film noir world",
+    "in the jungle",
+    "in the middle ages",
+    "in the wild west"
+  ]
+}
